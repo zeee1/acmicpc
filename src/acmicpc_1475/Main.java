@@ -20,13 +20,7 @@ public class Main {
 
         for(int i = 1 ; i < 9 ; i++){
             if(numberCount[i] > result){
-                if(result == 0){
-                    result = numberCount[i];
-                }
-                else{
-                    result += (numberCount[i]-result);
-                }
-
+                result = numberCount[i];
             }
         }
 
