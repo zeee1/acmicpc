@@ -9,21 +9,31 @@ public class Main {
         int M = scanner.nextInt();
         int N = scanner.nextInt();
 
-        while(M <= N){
-            int count = 0;
-            for(int i = 1; i <=M ; i++){
-                if (M%i == 0){
-                    count += 1;
-                    if(count > 2){
-                        break;
-                    }
-                }
+        boolean[] primeArray = new boolean[N+1];
+
+        for(int i = 2 ; i < primeArray.length; i++)
+        {
+            primeArray[i] = true;
+        }
+
+        primeArray[0] = false;
+        primeArray[1] = false;
+
+        for(int i = 2 ; i*i <= N ; i++)
+        {
+            for(int j = i*i; j <= N; j+=i)
+            {
+                primeArray[j] = false;
+            }
+        }
+
+        for(int i = M; i <= N; i++ )
+        {
+            if(primeArray[i] == true)
+            {
+                System.out.println(i);
             }
 
-            if(count == 2){
-                System.out.println(M);
-            }
-            M += 1;
         }
     }
 }
