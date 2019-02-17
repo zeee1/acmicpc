@@ -1,22 +1,24 @@
 package acmicpc_2751;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
 
 public class Main {
-    public static void main(String[] args){
-        Scanner input = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
+        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
 
-        int inputNumber = input.nextInt();
-        ArrayList<Integer> inputList = new ArrayList<>();
+        int inputNumber = Integer.parseInt(bf.readLine());
+        int[] integerArray = new int[inputNumber];
         for(int i = 0 ; i < inputNumber; i++){
-            inputList.add(input.nextInt());
+            integerArray[i] = Integer.parseInt(bf.readLine());
         }
 
-        Collections.sort(inputList);
+        Arrays.sort(integerArray);
+
         for(int i = 0; i < inputNumber; i++){
-            System.out.println(inputList.get(i));
+            System.out.println(integerArray[i]);
         }
     }
 }
